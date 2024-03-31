@@ -44,5 +44,11 @@
     "undici": "6.7.1",
     "vite": "^5.1.5",
     "vite-tsconfig-paths": "^4.3.1"
+  },
+  "dependencies": {
+    "@qwikest/icons": "^0.0.13",
+    "@unpic/qwik": "^0.0.44",
+    "clsx": "^2.1.0",
+    "rss-parser": "^3.13.0"
   }
 }

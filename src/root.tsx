@@ -7,24 +7,33 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 
 import "./global.css";
+import { ColorSchemeDetector } from "@/components/functional/color-scheme-detector";
 
 export default component$(() => {
-  /**
-   * The root of a QwikCity site always start with the <QwikCityProvider> component,
-   * immediately followed by the document's <head> and <body>.
-   *
-   * Don't remove the `<head>` and `<body>` elements.
-   */
-
   return (
     <QwikCityProvider>
       <head>
         <meta charSet="utf-8" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+
+        <meta property="og:type" content="article"></meta>
+        <meta property="og:url" content="https://cp20.dev"></meta>
+        <meta property="og:locale" content="ja"></meta>
+        <meta property="og:image" content="https://cp20.dev/ogp.png"></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta name="twitter:site" content="@__cp20__"></meta>
+        <meta name="twitter:image" content="https://cp20.dev/ogp.png"></meta>
         <RouterHead />
+        <ColorSchemeDetector />
         <ServiceWorkerRegister />
       </head>
-      <body lang="en">
+      <body
+        lang="ja-JP"
+        class="bg-zinc-50 text-black dark:bg-[#1f1f24] dark:text-zinc-200"
+      >
         <RouterOutlet />
       </body>
     </QwikCityProvider>

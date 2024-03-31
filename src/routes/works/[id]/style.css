@@ -1,0 +1,64 @@
+::view-transition-old(wipe-right),
+::view-transition-new(wipe-right),
+::view-transition-old(wipe-left),
+::view-transition-new(wipe-left) {
+  animation: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+::view-transition-old(wipe-right) {
+  animation-name: wipe-out-left;
+}
+::view-transition-new(wipe-right) {
+  animation-name: wipe-in-right;
+}
+
+::view-transition-old(wipe-left) {
+  animation-name: wipe-out-right;
+}
+::view-transition-new(wipe-left) {
+  animation-name: wipe-in-left;
+}
+
+@keyframes wipe-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+}
+
+@keyframes wipe-out-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+}
+
+@keyframes wipe-in-left {
+  0% {
+    transform: translateX(-20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wipe-in-right {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
