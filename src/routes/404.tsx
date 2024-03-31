@@ -14,7 +14,9 @@ const fetchPrevPortfolioPage = async (pathname: string) => {
 
   const isAvailable = await Promise.all(
     prevPortfolioUrls.map((url) =>
-      fetch(url, { method: "HEAD" }).then((res) => res.ok),
+      fetch(url, { method: "HEAD" })
+        .then((res) => res.ok)
+        .catch(() => false),
     ),
   );
   const availablePages = prevPortfolios.filter((_, i) => isAvailable[i]);
@@ -26,9 +28,11 @@ export default component$(() => {
   const {
     url: { pathname },
   } = useLocation();
+
   const prevPortfolioPages = useResource$<string[]>(() =>
     fetchPrevPortfolioPage(pathname),
   );
+
   return (
     <div class="flex h-full flex-col items-center">
       <h1 class="text-6xl">404</h1>
