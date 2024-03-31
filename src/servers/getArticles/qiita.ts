@@ -1,8 +1,7 @@
 import type { Article } from "@/servers/getArticles";
 import { z } from "zod";
 
-const envSchema = z.object({ QIITA_ACCESS_TOKEN: z.string() });
-const { QIITA_ACCESS_TOKEN } = envSchema.parse(process.env);
+const QIITA_ACCESS_TOKEN = process.env.QIITA_ACCESS_TOKEN;
 
 const qiitaArticleSchema = z.array(
   z.object({
@@ -13,9 +12,7 @@ const qiitaArticleSchema = z.array(
 );
 
 export const ogImageFetcher = async (url: string) => {
-  const response = await fetch(url, {
-    headers: { Authorization: `Bearer ${QIITA_ACCESS_TOKEN}` },
-  });
+  const response = await fetch(url);
   const text = await response.text();
   const ogImageUrl = text.match(
     /<meta property="og:image" content="(.+?)">/,
@@ -32,7 +29,9 @@ export const fetchQiitaArticles = async (): Promise<Article[]> => {
 
   try {
     const response = await fetch(requestUrl, {
-      headers: { Authorization: `Bearer ${QIITA_ACCESS_TOKEN}` },
+      headers: QIITA_ACCESS_TOKEN
+        ? { Authorization: `Bearer ${QIITA_ACCESS_TOKEN}` }
+        : {},
     });
     const jsonResponse = await response.json();
     const qiitaArticles = qiitaArticleSchema.parse(jsonResponse);
