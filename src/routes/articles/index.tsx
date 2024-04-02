@@ -1,10 +1,9 @@
 import { LinkCard } from "@/components/card/link-card";
 import { Skeletons } from "@/components/lading-sections/articles";
 import { Text } from "@/components/ui/text";
-import type { Article } from "@/servers/getArticles";
-import { getArticles } from "@/servers/getArticles";
+import { useArticles } from "@/routes/api/articles";
 import { formatDate } from "@/utils/formatDate";
-import { Resource, component$, useResource$ } from "@builder.io/qwik";
+import { Resource, component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export const head: DocumentHead = {
@@ -17,8 +16,10 @@ export const head: DocumentHead = {
   ],
 };
 
+export { useArticles };
+
 export default component$(() => {
-  const articles = useResource$<Article[]>(() => getArticles());
+  const articles = useArticles();
 
   return (
     <div class="mx-auto w-full max-w-7xl px-8 py-16">

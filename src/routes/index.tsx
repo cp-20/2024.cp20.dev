@@ -18,6 +18,8 @@ export const head: DocumentHead = {
   ],
 };
 
+export { useArticles } from "@/routes/api/articles";
+
 export default component$(() => {
   return (
     <div class="mx-auto max-w-7xl space-y-32 px-8 py-16">

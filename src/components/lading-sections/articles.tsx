@@ -2,10 +2,9 @@ import { LinkCard } from "@/components/card/link-card";
 import { TablerChevronRight } from "@/components/icons/chevron-right";
 import { Heading } from "@/components/lading-sections/components";
 import { Text } from "@/components/ui/text";
-import type { Article } from "@/servers/getArticles";
-import { getArticles } from "@/servers/getArticles";
+import { useArticles } from "@/routes/api/articles";
 import { formatDate } from "@/utils/formatDate";
-import { Resource, component$, useResource$ } from "@builder.io/qwik";
+import { Resource, component$ } from "@builder.io/qwik";
 
 export const Skeletons = component$(() => (
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -26,7 +25,7 @@ export const Skeletons = component$(() => (
 ));
 
 export const Articles = component$(() => {
-  const articles = useResource$<Article[]>(() => getArticles());
+  const articles = useArticles();
 
   return (
     <div>
