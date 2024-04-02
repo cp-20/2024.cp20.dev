@@ -10,7 +10,7 @@ export const Certifications = component$(() => (
     <div class="mx-auto max-w-2xl space-y-4 ">
       {certifications.map((certification) => (
         <div
-          class="flex items-center rounded-md bg-slate-400/10 px-8 py-4 dark:bg-slate-500/10"
+          class="flex items-center rounded-md bg-slate-400/10 px-8 py-4 dark:bg-slate-500/10 max-sm:px-4"
           key={certification.label}
         >
           <TablerCertificate class="mr-4 h-6 w-6 text-yellow-500" />
