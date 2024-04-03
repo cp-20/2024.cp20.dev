@@ -1,6 +1,6 @@
 {
-  "name": "my-qwik-basic-starter",
-  "description": "Demo App with Routing built-in (recommended)",
+  "name": "2024-cp20-dev",
+  "description": "2024 version of cp20's portfolio",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
@@ -50,10 +50,8 @@
     "wrangler": "^3.0.0"
   },
   "dependencies": {
-    "@qwikest/icons": "^0.0.13",
     "@unpic/qwik": "^0.0.44",
     "clsx": "^2.1.0",
-    "fast-xml-parser": "^4.3.6",
     "jsonwebtoken": "^9.0.2"
   }
 }
