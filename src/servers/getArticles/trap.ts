@@ -14,7 +14,6 @@ const getPostsResponseSchema = z.object({
 });
 
 const key = process.env.GHOST_ADMIN_API_KEY!;
-const [id, secret] = key.split(":");
 
 const searchParams = new URLSearchParams({
   includes: "authors",
@@ -27,6 +26,7 @@ const apiUrl = new URL("https://blog-admin.trap.jp/ghost/api/admin/posts");
 apiUrl.search = searchParams.toString();
 
 const getPosts = async () => {
+  const [id, secret] = key.split(":");
   const token = jwt.sign({}, Buffer.from(secret, "hex"), {
     keyid: id,
     algorithm: "HS256",
