@@ -32,6 +32,7 @@
     "@builder.io/qwik": "^1.5.1",
     "@builder.io/qwik-city": "^1.5.1",
     "@types/eslint": "^8.56.5",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20.11.11",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
@@ -52,6 +53,7 @@
     "@qwikest/icons": "^0.0.13",
     "@unpic/qwik": "^0.0.44",
     "clsx": "^2.1.0",
-    "fast-xml-parser": "^4.3.6"
+    "fast-xml-parser": "^4.3.6",
+    "jsonwebtoken": "^9.0.2"
   }
 }
