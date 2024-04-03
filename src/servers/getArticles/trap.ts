@@ -13,8 +13,7 @@ const getPostsResponseSchema = z.object({
   ),
 });
 
-const key = process.env.GHOST_ADMIN_API_KEY;
-if (!key) throw new Error("GHOST_ADMIN_API_KEY is not set");
+const key = process.env.GHOST_ADMIN_API_KEY!;
 const [id, secret] = key.split(":");
 
 const searchParams = new URLSearchParams({
