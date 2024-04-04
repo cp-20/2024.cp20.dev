@@ -6,7 +6,7 @@ import { TablerCertificate } from "@/components/icons/certificate";
 
 export const Certifications = component$(() => (
   <div>
-    <Heading>Certifications</Heading>
+    <Heading id="certifications">Certifications</Heading>
     <div class="mx-auto max-w-2xl space-y-4 ">
       {certifications.map((certification) => (
         <div

@@ -6,7 +6,7 @@ import { LinkCard } from "@/components/card/link-card";
 
 export const Works = component$(() => (
   <div>
-    <Heading>Works</Heading>
+    <Heading id="works">Works</Heading>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
       {works.slice(0, 5).map((work) => (
         <LinkCard

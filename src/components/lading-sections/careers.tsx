@@ -6,7 +6,7 @@ import { Heading } from "@/components/lading-sections/components";
 
 export const Careers = component$(() => (
   <div>
-    <Heading>Careers</Heading>
+    <Heading id="careers">Careers</Heading>
     <div class="mx-auto max-w-2xl space-y-1">
       {careers.map((career, i) => (
         <>

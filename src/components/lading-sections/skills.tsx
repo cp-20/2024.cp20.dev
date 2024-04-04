@@ -5,7 +5,7 @@ import { Heading } from "@/components/lading-sections/components";
 
 export const Skills = component$(() => (
   <div>
-    <Heading>Skills</Heading>
+    <Heading id="skills">Skills</Heading>
     <div class="space-y-6">
       <div>
         <h3 class="mb-6 border-l-[6px] border-zinc-600 pl-4 text-lg font-bold dark:border-zinc-300">

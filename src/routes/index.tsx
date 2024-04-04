@@ -7,6 +7,7 @@ import { Skills } from "@/components/lading-sections/skills";
 import { Careers } from "@/components/lading-sections/careers";
 import { Awards } from "@/components/lading-sections/awards";
 import { Certifications } from "@/components/lading-sections/certifications";
+import { Indexes } from "@/components/lading-sections/indexes";
 
 export const head: DocumentHead = {
   title: "cp20.dev",
@@ -24,6 +25,7 @@ export default component$(() => {
   return (
     <div class="mx-auto max-w-7xl space-y-32 px-8 py-16">
       <Profile />
+      <Indexes />
       <Works />
       <Articles />
       <Skills />

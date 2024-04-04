@@ -7,7 +7,7 @@ import { UniversalLink } from "@/components/ui/link";
 
 export const Awards = component$(() => (
   <div>
-    <Heading>Awards</Heading>
+    <Heading id="awards">Awards</Heading>
     <div class="mx-auto max-w-2xl space-y-4">
       {awards.map((award) => (
         <UniversalLink

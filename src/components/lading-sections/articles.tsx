@@ -29,7 +29,7 @@ export const Articles = component$(() => {
 
   return (
     <div>
-      <Heading>Articles</Heading>
+      <Heading id="articles">Articles</Heading>
       <div>
         <Resource
           value={articles}
