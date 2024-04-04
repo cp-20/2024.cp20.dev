@@ -18,6 +18,7 @@ export default component$(() => {
                 href={account.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                title={`${account.name} (${account.screenName})`}
                 class="inline-grid h-8 w-8 place-content-center rounded-md border-2 border-slate-500/10 bg-slate-300/10 text-inherit transition-colors duration-200 hover:bg-slate-500/10 dark:bg-slate-500/10 dark:hover:bg-slate-500/25"
               >
                 <account.icon width={16} height={16} />
