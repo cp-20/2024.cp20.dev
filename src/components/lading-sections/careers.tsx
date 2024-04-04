@@ -14,14 +14,14 @@ export const Careers = component$(() => (
             class={clsx(
               "flex flex-col-reverse justify-between rounded-md px-8 py-4 sm:flex-row sm:items-center",
               career.active
-                ? "bg-slate-500/10 dark:bg-slate-500/25"
+                ? "bg-slate-600/15 dark:bg-slate-500/25"
                 : "bg-slate-400/10 dark:bg-slate-500/20",
             )}
           >
             <div>
               <Text>{career.label}</Text>
               {career.comment && (
-                <Text class="text- mt-1 text-xs text-zinc-800/60 dark:text-zinc-200/60">
+                <Text class="mt-1 text-xs text-zinc-900/60 dark:text-zinc-200/60">
                   {career.comment}
                 </Text>
               )}
