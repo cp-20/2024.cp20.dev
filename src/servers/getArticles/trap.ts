@@ -13,8 +13,6 @@ const getPostsResponseSchema = z.object({
   ),
 });
 
-const key = process.env.GHOST_ADMIN_API_KEY!;
-
 const searchParams = new URLSearchParams({
   includes: "authors",
   fields: "title,url,feature_image,published_at",
@@ -25,8 +23,8 @@ const searchParams = new URLSearchParams({
 const apiUrl = new URL("https://blog-admin.trap.jp/ghost/api/admin/posts");
 apiUrl.search = searchParams.toString();
 
-const getPosts = async () => {
-  const token = await sign(key);
+const getPosts = async (apiKey: string) => {
+  const token = await sign(apiKey);
 
   const headers = { Authorization: `Ghost ${token}` };
   const res = await fetch(apiUrl, { headers });
@@ -39,8 +37,8 @@ const getPosts = async () => {
   return data.posts;
 };
 
-export const fetchTrapArticles = async () => {
-  const posts = await getPosts();
+export const fetchTrapArticles = async (apiKey: string) => {
+  const posts = await getPosts(apiKey);
 
   const articles: Article[] = posts.map((post) => ({
     source: "trap.jp",

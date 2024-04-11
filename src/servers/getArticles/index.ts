@@ -13,13 +13,16 @@ export type Article = {
   ogImageUrl: string | undefined;
 };
 
-export const getArticles = server$(async () => {
+export const getArticles = server$(async function () {
+  const ghostApiKey = this.platform.env?.GHOST_ADMIN_API_KEY as string;
+  const qiitaAccessToken = this.platform.env?.QIITA_ACCESS_TOKEN as string;
+
   const articles = await Promise.all([
-    fetchQiitaArticles(),
+    fetchQiitaArticles(qiitaAccessToken),
     fetchZennArticles(),
     fetchNoteArticles(),
     fetchSizumeArticles(),
-    fetchTrapArticles(),
+    fetchTrapArticles(ghostApiKey),
   ]).then((articles) => articles.flat());
 
   articles.sort((a, b) => b.postedAt.getTime() - a.postedAt.getTime());

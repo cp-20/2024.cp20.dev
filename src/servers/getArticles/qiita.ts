@@ -1,8 +1,6 @@
 import type { Article } from "@/servers/getArticles";
 import { z } from "zod";
 
-const QIITA_ACCESS_TOKEN = process.env.QIITA_ACCESS_TOKEN;
-
 const qiitaArticleSchema = z.array(
   z.object({
     title: z.string(),
@@ -24,14 +22,14 @@ const qiitaApiEndpoint =
   "https://qiita.com/api/v2/users/cp20/items?per_page=100";
 
 // FIXME: 100件までしか取得できない
-export const fetchQiitaArticles = async (): Promise<Article[]> => {
+export const fetchQiitaArticles = async (
+  accessToken: string | undefined,
+): Promise<Article[]> => {
   const requestUrl = qiitaApiEndpoint;
 
   try {
     const response = await fetch(requestUrl, {
-      headers: QIITA_ACCESS_TOKEN
-        ? { Authorization: `Bearer ${QIITA_ACCESS_TOKEN}` }
-        : {},
+      headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : {},
     });
     const jsonResponse = await response.json();
     const qiitaArticles = qiitaArticleSchema.parse(jsonResponse);
