@@ -25,8 +25,6 @@ const algorithm = {
 };
 
 export const sign = async (key: string): Promise<string> => {
-  console.log("key", key);
-
   const [id, secret] = key.split(":");
 
   const now = Math.floor(Date.now() / 1000);
