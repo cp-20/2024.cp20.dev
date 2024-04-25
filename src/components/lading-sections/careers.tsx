@@ -14,8 +14,8 @@ export const Careers = component$(() => (
             class={clsx(
               "flex flex-col-reverse justify-between rounded-md px-8 py-4 sm:flex-row sm:items-center",
               career.active
-                ? "bg-slate-600/15 dark:bg-slate-500/25"
-                : "bg-slate-400/10 dark:bg-slate-500/20",
+                ? "bg-slate-600/15 dark:bg-slate-500/30"
+                : "bg-slate-400/10 dark:bg-slate-500/10",
             )}
           >
             <div>
@@ -31,7 +31,7 @@ export const Careers = component$(() => (
             </Text>
           </div>
           {i < careers.length - 1 && (
-            <div class="mx-auto h-8 w-1 rounded-md bg-slate-500/50" />
+            <div class="mx-auto h-8 w-1 rounded-md bg-slate-300/40 dark:bg-slate-500/50" />
           )}
         </>
       ))}
