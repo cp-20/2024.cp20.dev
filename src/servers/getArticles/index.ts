@@ -14,8 +14,14 @@ export type Article = {
 };
 
 export const getArticles = server$(async function () {
-  const ghostApiKey = this.platform.env?.GHOST_ADMIN_API_KEY as string;
-  const qiitaAccessToken = this.platform.env?.QIITA_ACCESS_TOKEN as string;
+  const getEnv = (key: string): string | undefined =>
+    this.platform.env?.[key] ?? process.env[key];
+  const ghostApiKey = getEnv("GHOST_ADMIN_API_KEY");
+  const qiitaAccessToken = getEnv("QIITA_ACCESS_TOKEN");
+
+  if (!ghostApiKey || !qiitaAccessToken) {
+    throw new Error("API key is not set");
+  }
 
   const articles = await Promise.all([
     fetchQiitaArticles(qiitaAccessToken),
