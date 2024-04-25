@@ -28,4 +28,9 @@ export const careers = [
     comment: "※現在のLINEヤフー株式会社",
     date: "2023/08 - 2023/09",
   },
+  {
+    active: true,
+    label: "株式会社Flatt Security インターン (SWE on Shisho Cloud Team)",
+    date: "2024/04 - now",
+  },
 ] satisfies Career[];
