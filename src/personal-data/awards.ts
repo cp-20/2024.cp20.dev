@@ -11,6 +11,11 @@ export const awards = [
     url: "https://github.com/CyberAgentHack/web-speed-hackathon-2024",
   },
   {
+    label: "CA Tech Lounge 2期生 採択",
+    date: "2023/08",
+    url: "https://www.cyberagent.co.jp/careers/special/students/tech_lounge/",
+  },
+  {
     label: "SecHack365 2023 採択",
     date: "2023/05",
     url: "https://sechack365.nict.go.jp/",
