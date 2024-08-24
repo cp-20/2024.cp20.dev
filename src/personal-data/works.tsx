@@ -7,6 +7,7 @@ import ImageDiceSpecV2 from "@/media/works/dice-spec-v2.png?jsx";
 import ImageReadStack from "@/media/works/read-stack.png?jsx";
 import ImageTokyoTechSyllabus from "@/media/works/tokyo-tech-syllabus.png?jsx";
 import Image2024Portfolio from "@/media/works/2024.cp20.dev.png?jsx";
+import ImageCCompiler from "@/media/works/c-compiler.png?jsx";
 import type { Component, JSXOutput } from "@builder.io/qwik";
 import { Text } from "@/components/ui/text";
 import { DefaultLink } from "@/components/ui/link";
@@ -44,6 +45,33 @@ export type Work = {
 };
 
 export const works = [
+  {
+    id: "c-compiler",
+    title: "自作Cコンパイラ",
+    description: "セルフホストできるCコンパイラ",
+    url: "https://github.com/cp-20/c-compiler",
+    repositories: ["https://github.com/cp-20/c-compiler"],
+    productionTime: "2024/04/01 ～ 2024/08/22",
+    techStack: [
+      { label: "C", type: "language", new: true },
+      { label: "Make", type: "tool", new: true },
+    ],
+    image: ImageCCompiler,
+    tags: ["個人開発"],
+    comment: [
+      <Text key="c-compiler-1">
+        セルフホストは人類の夢だと思っているので、やりました
+      </Text>,
+      <Text key="c-compiler-2">
+        Cとかいう言語、メモリ管理とか文字列操作とか辛すぎてもう触りたくないです
+      </Text>,
+      <Text key="c-compiler-3">
+        詳しいことは
+        <DefaultLink href="https://trap.jp/post/2313/">ブログ</DefaultLink>
+        に全部書いたので、それを読めば全て分かります
+      </Text>,
+    ],
+  },
   {
     id: "2024-portfolio",
     title: "cp20.dev (2024)",
