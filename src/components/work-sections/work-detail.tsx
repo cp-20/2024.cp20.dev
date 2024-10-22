@@ -1,3 +1,4 @@
+import { TablerLock } from "@/components/icons/lock";
 import { DefaultLink } from "@/components/ui/link";
 import { Text } from "@/components/ui/text";
 import type { Work } from "@/personal-data/works";
@@ -38,11 +39,21 @@ export const WorkDetail = ({ work, class: className, ...props }: Props) => (
       リポジトリ
     </Text>
     <div class="-mt-4 flex flex-wrap gap-2 sm:mt-0">
-      {work.repositories.map((repo) => (
-        <DefaultLink href={repo} key={repo}>
-          {getRepoName(repo)}
-        </DefaultLink>
-      ))}
+      {work.repositories.map((repo) =>
+        repo === "private" ? (
+          <Text
+            key={repo}
+            class="flex items-center gap-1 text-zinc-500 dark:text-zinc-400"
+          >
+            <span>private</span>
+            <TablerLock class="inline size-5" />
+          </Text>
+        ) : (
+          <DefaultLink href={repo} key={repo}>
+            {getRepoName(repo)}
+          </DefaultLink>
+        ),
+      )}
     </div>
     <Text class="font-semibold text-zinc-600 dark:text-zinc-300 max-sm:text-xs sm:text-right">
       タグ
