@@ -8,6 +8,7 @@ import ImageReadStack from "@/media/works/read-stack.png?jsx";
 import ImageTokyoTechSyllabus from "@/media/works/tokyo-tech-syllabus.png?jsx";
 import Image2024Portfolio from "@/media/works/2024.cp20.dev.png?jsx";
 import ImageCCompiler from "@/media/works/c-compiler.png?jsx";
+import ImageTrapConference from "@/media/works/trap-conference.png?jsx";
 import type { Component, JSXOutput } from "@builder.io/qwik";
 import { Text } from "@/components/ui/text";
 import { DefaultLink } from "@/components/ui/link";
@@ -45,6 +46,35 @@ export type Work = {
 };
 
 export const works = [
+  {
+    id: "trap-conference",
+    title: "traP Conference イベントページ",
+    description: "2024年10月に行われたイベントの公式ページ",
+    url: "https://trap-conference.trap.show/",
+    repositories: ["private"],
+    productionTime: "2024/09/29 ～ 2024/09/30",
+    techStack: [
+      { label: "TypeScript", type: "language", new: false },
+      { label: "Astro", type: "framework", new: true },
+      { label: "Tailwind CSS", type: "styling", new: false },
+      { label: "NeoShowcase", type: "deploy", new: false },
+    ],
+    image: ImageTrapConference,
+    tags: ["個人開発"],
+    comment: [
+      <Text key="trap-conference-1">
+        イベントページが欲しいよねという話を耳に挟んだので、ガッと作りました
+      </Text>,
+      <Text key="trap-conference-2">
+        CSSアニメーションを多用しつつも、あんまりうざくない感じにまとめるのを意識しました
+        (<DefaultLink href="https://x.com/yui540">@yui540</DefaultLink>
+        さんリスペクトです)
+      </Text>,
+      <Text key="trap-conference-3">
+        適当に付けた「泡を表示しない」オプションに言及してくれる人が思ったより多くてびっくりしました
+      </Text>,
+    ],
+  },
   {
     id: "c-compiler",
     title: "自作Cコンパイラ",
@@ -85,7 +115,7 @@ export const works = [
       { label: "Qwik", type: "main", new: true },
       { label: "Vite", type: "tool", new: false },
       { label: "Tailwind CSS", type: "styling", new: false },
-      { label: "???", type: "deploy", new: false },
+      { label: "Cloudflare Pages", type: "deploy", new: false },
     ],
     image: Image2024Portfolio,
     tags: ["個人開発"],
