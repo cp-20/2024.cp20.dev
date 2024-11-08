@@ -24,7 +24,7 @@ export const WorkDetail = ({ work, class: className, ...props }: Props) => (
       アプリURL
     </Text>
     <Text class="-mt-4 text-zinc-500 dark:text-zinc-400 sm:mt-0">
-      <DefaultLink href={work.url} external>
+      <DefaultLink href={work.url} key={work.url} external>
         {work.url}
       </DefaultLink>
     </Text>
